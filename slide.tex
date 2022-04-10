@@ -1,0 +1,349 @@
+%% slide.tex
+%% Copyright April 2022 Xu Minghao (or Ming-Hao Xu)
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is April 2022 Xu Minghao (or Ming-Hao Xu).
+%
+% This work consists of the files slide.tex
+% and the derived file Ritsumeikan.sty.
+
+\documentclass{beamer}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+
+% dummy text; remove it when working on this template
+\usepackage{lipsum}
+
+\author{Ming-Hao Xu}
+\title{Your Presentation Title}
+\subtitle{Ritsumeikan Beamer Theme}
+\institute{
+    College of Information Science and Engineering (CISE) \\
+    Ritsumeikan University
+}
+\date{April, 2022}
+\usepackage{Ritsumeikan}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[keepaspectratio, scale=0.017]{pic/Ritsumeikan_University_Logo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Title}
+    \begin{itemize}[<+-| alert@+>] % stepwise alerts
+        \item \lipsum[1][1-4]
+        \item \lipsum[1][5-8]
+    \end{itemize}
+\end{frame}
+
+
+\section{Literature Review}
+
+\subsection{GPT3-derived Models DALLE \& CLIP}
+
+\begin{frame}
+    \begin{itemize}
+        \item \lipsum[2][1-4]
+        \item \lipsum[2][5-9]
+        \item Results accessible at \newline \url{https://scholar.google.com}
+    \end{itemize}
+\end{frame}
+
+
+\section{Methods}
+
+\subsection{Diffusion Model}
+
+\begin{frame}{Title}
+    \begin{itemize}
+        \item \lipsum[3][1-4]
+    \end{itemize}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c|c}
+            Microsoft\textsuperscript{\textregistered}  Windows & Apple\textsuperscript{\textregistered}  Mac OS \\
+            \hline
+            Windows-Kernel & Unix-like \\
+            Arm, Intel & Intel, Apple Silicon \\
+            Sudden update & Stable update \\
+            Less security & More security \\
+            ... & ... \\
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Algorithms}
+    \begin{exampleblock}{Non-Numbering Formula}
+        \begin{equation*}
+            J(\theta) = \mathbb{E}_{\pi_\theta}[G_t] = \sum_{s\in\mathcal{S}} d^\pi (s)V^\pi(s)=\sum_{s\in\mathcal{S}} d^\pi(s)\sum_{a\in\mathcal{A}}\pi_\theta(a|s)Q^\pi(s,a)
+        \end{equation*}
+    \end{exampleblock}
+    \begin{exampleblock}{Multi-Row Formula\footnote{If text appears in the formula，use $\backslash$mathrm\{\} or $\backslash$text\{\} instead}}
+        \begin{align}
+            Q_\mathrm{target}&=r+\gamma Q^\pi(s^\prime, \pi_\theta(s^\prime)+\epsilon)\\
+            \epsilon&\sim\mathrm{clip}(\mathcal{N}(0, \sigma), -c, c)\nonumber
+        \end{align}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Numbered Multi-line Formula}
+        % Taken from Mathmode.tex
+        \begin{multline}
+            A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
+            +\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
+            +\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
+            +\ldots\\
+            \left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
+            =\frac{1}{3}\left(b^{3}-a^{3}\right)
+        \end{multline}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Graphics and Columns}
+    \begin{minipage}[c]{0.3\linewidth}
+        \psset{unit=0.8cm}
+        \begin{pspicture}(-1.75,-3)(3.25,4)
+            \psline[linewidth=0.25pt](0,0)(0,4)
+            \rput[tl]{0}(0.2,2){$\vec e_z$}
+            \rput[tr]{0}(-0.9,1.4){$\vec e$}
+            \rput[tl]{0}(2.8,-1.1){$\vec C_{ptm{ext}}$}
+            \rput[br]{0}(-0.3,2.1){$\theta$}
+            \rput{25}(0,0){%
+            \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,-3.2)(0.1,0)}
+            \rput{25}(0,0){%
+            \psellipse[fillstyle=solid,fillcolor=yellow,linewidth=3pt](0,0)(1.5,0.5)}
+            \rput{25}(0,0){%
+            \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,0)(0.1,3.2)}
+            \rput{25}(0,0){\psline[linecolor=red,linewidth=1.5pt]{->}(0,0)(0.,2)}
+%           \psRotation{0}(0,3.5){$\dot\phi$}
+%           \psRotation{25}(-1.2,2.6){$\dot\psi$}
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(0,2)
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(3,-1)
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(2.85,-0.95)
+            \psarc{->}{2.1}{90}{112.5}
+            \rput[bl](.1,.01){C}
+        \end{pspicture}
+    \end{minipage}\hspace{2cm}
+    \begin{minipage}{0.5\linewidth}
+        \medskip
+        % \hspace{2cm}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height=.4\textheight]{pic/sample.pdf}
+        \end{figure}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} Common Commands}
+    \begin{exampleblock}{Commands}
+        \centering
+        \footnotesize
+        \begin{tabular}{llll}
+            \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+            chapter & section & sub-section & paragraph \\\hline
+            \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+            center & emphasize & original & hyperlink \\\hline
+            \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+            footnote & list item & caption & insert image \\\hline
+            \cmd{label} & \cmd{cite} & \cmd{ref} \\
+            label & citation & refer\\\hline
+        \end{tabular}
+    \end{exampleblock}
+    \begin{exampleblock}{Environment}
+        \centering
+        \footnotesize
+        \begin{tabular}{lll}
+            \env{table} & \env{figure} & \env{equation}\\
+            table & figure & formula \\\hline
+            \env{itemize} & \env{enumerate} & \env{description}\\
+            non-numbering item & numbering item & description \\\hline
+        \end{tabular}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} Examples of environmental commands}
+    \begin{minipage}{0.5\linewidth}
+\begin{lstlisting}[language=TeX]
+\begin{itemize}
+  \item A \item B
+  \item C
+  \begin{itemize}
+    \item C-1
+  \end{itemize}
+\end{itemize}
+\end{lstlisting}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.3\linewidth}
+        \begin{itemize}
+            \item A
+            \item B
+            \item C
+            \begin{itemize}
+                \item C-1
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    \medskip
+    \pause
+    \begin{minipage}{0.5\linewidth}
+\begin{lstlisting}[language=TeX]
+\begin{enumerate}
+  \item A \item B
+  \item C
+  \begin{itemize}
+    \item[n+e]
+  \end{itemize}
+\end{enumerate}
+\end{lstlisting}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.3\linewidth}
+        \begin{enumerate}
+            \item A
+            \item B
+            \item C
+            \begin{itemize}
+                \item[n+e]
+            \end{itemize}
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} Formulas}
+    \begin{columns}
+        \begin{column}{.55\textwidth}
+\begin{lstlisting}[language=TeX]
+$V = \frac{4}{3}\pi r^3$
+
+\[
+  V = \frac{4}{3}\pi r^3
+\]
+
+\begin{equation}
+  \label{eq:vsphere}
+  V = \frac{4}{3}\pi r^3
+\end{equation}
+\end{lstlisting}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            $V = \frac{4}{3}\pi r^3$
+            \[
+                V = \frac{4}{3}\pi r^3
+            \]
+            \begin{equation}
+                \label{eq:vsphere}
+                V = \frac{4}{3}\pi r^3
+            \end{equation}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item more information \href{https://ja.overleaf.com/learn/latex/Mathematical_expressions}{\color{purple}{here}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{columns}
+        \column{.6\textwidth}
+\begin{lstlisting}[language=TeX]
+\begin{table}[htbp]
+  \caption{numbers & meaning}
+  \label{tab:number}
+  \centering
+  \begin{tabular}{cl}
+    \toprule
+    number & meaning \\
+    \midrule
+    1 & 4.0 \\
+    2 & 3.7 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{lstlisting}
+        \column{.4\textwidth}
+        \begin{table}[htpb]
+            \centering
+            \caption{numbers \& meaning}
+            \label{tab:number}
+            \begin{tabular}{cl}\toprule
+                numbers & meaning \\\midrule
+                1 & 4.0\\
+                2 & 3.7\\\bottomrule
+            \end{tabular}
+        \end{table}
+        \normalsize formula~(\ref{eq:vsphere}) at previous slide and Table~\ref{tab:number}。
+    \end{columns}
+\end{frame}
+
+\section{Results}
+\begin{frame}
+    \begin{itemize}
+        \item \lipsum[4][1-4]
+        \item \lipsum[4][5-9]
+        \item \lipsum[5][1-4]
+        \item \lipsum[5][5-8]
+    \end{itemize}
+\end{frame}
+
+\section{References}
+
+\begin{frame}[allowframebreaks]
+    \bibliography{ref}
+    \bibliographystyle{ieeetr}
+    \nocite{*} % used here because no citation happens in slides
+    % if there are too many try use：
+    % \tiny\bibliographystyle{alpha}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        {\Huge\calligra Thank You}
+    \end{center}
+\end{frame}
+
+\end{document}
