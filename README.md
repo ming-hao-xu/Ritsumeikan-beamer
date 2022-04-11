@@ -1,11 +1,11 @@
 # ritsumeikan-beamer-theme
 A LaTeX beamer theme template for Ritsumeikan University students.  
-[Preview Here](https://github.com/xu-minghao317/ritsumeikan-beamer-theme/blob/main/ritsumeikan_beamer.pdf)
+- [Preview Here](https://github.com/xu-minghao317/ritsumeikan-beamer-theme/blob/main/ritsumeikan_beamer.pdf).  
+- [OverLeaf Gallery](https://www.overleaf.com/latex/templates/ritsumeikan-university-theme-beamer-template/jmfcqqptxjxk)
 
 ## Author
 
-👤 Xu Minghao (Ming-Hao Xu) 
-* Github: [@xu-minghao317](https://github.com/xu-minghao317)
+👤 Xu Minghao [@xu-minghao317](https://github.com/xu-minghao317)
 
 ## Show your support
 
