@@ -1,7 +1,8 @@
 # ritsumeikan-beamer-theme
-A LaTeX beamer theme template for Ritsumeikan University students.  
+> A LaTeX beamer theme template for Ritsumeikan University students.  
 
-![home](pic/home.jpeg)
+<img src="pic/home.jpeg" width="400">
+
 
 - [Preview Full PDF Here](https://github.com/xu-minghao317/ritsumeikan-beamer-theme/blob/main/ritsumeikan_beamer.pdf).  
 - [At OverLeaf](https://www.overleaf.com/latex/templates/ritsumeikan-university-theme-beamer-template/jmfcqqptxjxk)
