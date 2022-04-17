@@ -4,7 +4,7 @@
 <img src="pic/home.jpeg" width="400">
 
 
-- [Preview Full PDF Here](https://github.com/xu-minghao317/ritsumeikan-beamer-theme/blob/main/ritsumeikan_beamer.pdf).  
+- [Preview Full PDF Here](https://github.com/xu-minghao317/ritsumeikan-beamer-theme/blob/main/ritsumeikan_beamer.pdf)    
 - [At OverLeaf](https://www.overleaf.com/latex/templates/ritsumeikan-university-theme-beamer-template/jmfcqqptxjxk)
 
 ## Author
